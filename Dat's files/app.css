@@ -1,8 +1,7 @@
 body{
-    background-image: url('../image/mountain.jpg');
-    background-size: cover;
+    background-image: url('../image/Instakilogram.png');
+    background-size:contain;
     background: position y -80px;
-    font-size: 18px;
 }
 
 
