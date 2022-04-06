@@ -1,8 +1,8 @@
 body{
-    background-image: url('../image/mountain.jpg')
+    background-image: url('../image/mountain.jpg');
     background-size: cover;
     background: position y -80px;
-    font size: 18px;
+    font-size: 18px;
 }
 
 
@@ -48,7 +48,7 @@ body{
     background: transparent;
     border: 0;
     outline: 0;
-    color:#fff
+    color:#fff;
     flex-grow: 1;
 }
 
