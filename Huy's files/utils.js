@@ -15,6 +15,10 @@ function verify(){
 		alert("The confirm password is incorrect!");
     submitable = "false";
 	 }
+	else if(!(pass[0].value.length>=8&&pass[0].value.length<=20)){
+		alert("Password must be from 8 to 20 characters");
+    submitable = "false";
+	 }
 	 if (submitable == "false") {
 	return false;
     }
