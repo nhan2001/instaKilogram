@@ -8,3 +8,14 @@ function show() {
     x[1].type = "password";
   }
 }
+function verify(){
+	 var pass = document.getElementsByClassName("abc");
+	 submitable = "true";
+	 if(!(pass[0].value=== pass[1].value)){
+		alert("The confirm password is incorrect!");
+    submitable = "false";
+	 }
+	 if (submitable == "false") {
+	return false;
+    }
+}
