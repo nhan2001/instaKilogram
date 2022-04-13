@@ -1,3 +1,7 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 .container{
     width: 100%;
     height: auto;
@@ -10,8 +14,8 @@
 }
 .menubars a img{
     width: 200px;
-    height: 200px;
-    margin-top: -70px;
+    height: 50px;
+    margin-top: 0px;
     float: right;
     
     
@@ -28,7 +32,7 @@
     list-style: none;
     float: left;
     display: flex;
-    margin-top: 70px;
+    margin-top: 0px;
 }
 .menu li{
     padding: 15px 15px;
