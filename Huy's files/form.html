@@ -4,12 +4,12 @@
 
 <h2>Sign up for an account!</h2>
 
-<form autocomplete="on">
+<form autocomplete="on" onsubmit="return verify()">
 	<label for="fname">First Name:</label><br>
-  <input type="text" id = "fname" placeholder="First Name"><br>
+  <input type="text" class = "name" placeholder="First Name"><br>
   
   <label for="lname">Last Name:</label><br>
-  <input type="text" id = "lname" placeholder="Last Name"><br>
+  <input type="text" class = "name" placeholder="Last Name"><br>
   
   <label for="email">Email address:</label><br>
   <input type="email" id = "email" placeholder="Username@gmail.com"><br><br>
@@ -28,4 +28,3 @@
 <script src="utils.js"></script>
 </body>
 </html>
-
