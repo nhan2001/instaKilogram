@@ -64,15 +64,15 @@ if(isset($_POST['submitBtn'])) {
     <?php if ((!isset($_POST['submitBtn'])) || ($error != '')) {?>
         <div class="title">Sign up for an account!</div>
         <div class="content">
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" autocomplete="on" onsubmit="return verify()" method="post" enctype="multipart/form-data">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">First Name</span>
-                        <input type="text" name= "firstName" placeholder="Enter your first name" required>
+                        <input type="text" class = "name" name= "firstName" placeholder="Enter your first name" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Last Name</span>
-                        <input type="text" name= "lastName" placeholder="Enter your last name" required>
+                        <input type="text" class = "name" name= "lastName" placeholder="Enter your last name" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Username</span>
@@ -84,16 +84,19 @@ if(isset($_POST['submitBtn'])) {
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" namme = "password1"placeholder="Enter your password" required>
+                        <input type="password" class = "abc" name = "password1"placeholder="Enter your password" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
-                        <input type="password" name="password2" placeholder="Confirm your password" required>
+                        <input type="password" class = "abc" name="password2" placeholder="Confirm your password" required>
+						<input type="checkbox" onclick="show()">Show Password
                     </div>
                     <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
+				<input type="reset" value="Clear"><br>
                 <input type="submit" name="submitBtn" id = "submit" value="Register">
             </form>
+			<script src="utils.js"></script>
         </div>
     </div>
 <?php 
