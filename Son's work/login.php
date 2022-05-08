@@ -32,11 +32,7 @@ if (isset($_POST['submitBtn'])){
         </div>
         <nav class="login_signup">
             <ul>
-                <li id="login">
-                    <a href="#wrapper">
-                        Log in
-                    </a>
-                </li>
+              
                 <li id="signup">
                     <a href="signup.php">
                         Sign up

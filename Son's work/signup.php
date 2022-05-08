@@ -52,11 +52,6 @@ if(isset($_POST['submitBtn'])) {
                         Log in
                     </a>
                 </li>
-                <li id="signup">
-                    <a href="signup.php">
-                        Sign up
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>
