@@ -1,5 +1,5 @@
 function show() {
-  const x = document.getElementsByClassName("abc");
+  const x = document.getElementsByClassName("pass");
   if (x[0].type === "password" && x[1].type === "password") {
     x[0].type = "text";
     x[1].type = "text";
@@ -9,11 +9,15 @@ function show() {
   }
 }
 function verify(){
-	 var pass = document.getElementsByClassName("abc");
+	 var pass = document.getElementsByClassName("pass");
 	 var name = document.getElementsByClassName("name");
 	 submitable = "true";
 	 if(!(pass[0].value=== pass[1].value)){
 		alert("The confirm password is incorrect!");
+    submitable = "false";
+	 }
+	 else if(!isGMAIL(document.getElementById("email").value)){
+		alert("Email should be in GMAIL format");
     submitable = "false";
 	 }
 	 else if(!(name[0].value.length>=2&&name[0].value.length<=20&&name[1].value.length>=2&&name[1].value.length<=20)){
@@ -40,4 +44,7 @@ function containsUC(str) {
 }
 function containsDigit(str) {
     return str.match(/[0-9]/);
+}
+function isGMAIL(str) {
+    return str.match(/^[a-zA-Z0-9_\-.]+@gmail.com$/i); 
 }

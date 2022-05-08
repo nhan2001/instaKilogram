@@ -17,6 +17,7 @@ if(isset($_POST['submitBtn'])) {
     // $password2 =$_POST['password2'];
 
     $target_file = "profileImages/" . basename($_FILES["fileToUpload"]["name"]);
+	echo($target_file);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $error = register($Fname,$Lname,$username,$email,$password1,$password2,$target_file,$imageFileType); //maybe add another variable called error code 
 
@@ -75,15 +76,15 @@ if(isset($_POST['submitBtn'])) {
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="email" name="emailAddress" placeholder="Enter your email" required>
+                        <input type="email" id = "email" name="emailAddress" placeholder="Enter your email" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" class = "abc" name = "password1"placeholder="Enter your password" required>
+                        <input type="password" class = "pass" name = "password1"placeholder="Enter your password" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
-                        <input type="password" class = "abc" name="password2" placeholder="Confirm your password" required>
+                        <input type="password" class = "pass" name="password2" placeholder="Confirm your password" required>
 						<input type="checkbox" onclick="show()">Show Password
                     </div>
                     <input type="file" name="fileToUpload" id="fileToUpload">
