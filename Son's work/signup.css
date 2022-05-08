@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-image: url('image/Instakilogram.png');
+    background-image: url('Instakilogram.png');
     background-size: contain;
     background: position y -80px;
 }
