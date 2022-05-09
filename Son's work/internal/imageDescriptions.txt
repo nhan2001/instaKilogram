@@ -1,0 +1,4 @@
+<?php return array (
+  '1.png' => '123',
+  '1.jpg' => 'mmmmmmmmmmm',
+);
