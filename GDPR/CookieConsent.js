@@ -40,8 +40,8 @@ let getCookie= function(){
 let isSetCookie= function(){
     let value=getCookie();
     if(value!=""){
-		alert("welcome back!");
         document.getElementById("popup").style.display = "none";
+	    alert("welcome back!");
     }else{
         
         document.getElementById("popup").style.display = "block";
