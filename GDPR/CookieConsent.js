@@ -3,7 +3,7 @@
 var cookieKey= "Accepted";
 var cookieValue="true";
 document.cookie = "abc=false"; // for testing purpose
-function myGreeting() {
+function display() {
   document.getElementById("popup").style.display = "none"
 }
 // "i understand" button in action
@@ -16,7 +16,7 @@ accept.onclick= function(){
   document.cookie = "Accepted=true";
   if(document.cookie){ // Check if cookies are allowed
     document.getElementById("popup").innerHTML = "Your related cookies have been stored. ";
-	const myTimeout = setTimeout(myGreeting, 3000);
+	myTimeout = setTimeout(display, 2000);
   }else{
     alert("Set cookie is unsuccessful.Please enable cookies in your browser");
   }
@@ -40,8 +40,8 @@ let getCookie= function(){
 let isSetCookie= function(){
     let value=getCookie();
     if(value!=""){
-        document.getElementById("popup").style.display = "none";
-	    alert("welcome back!");
+        document.getElementById("popup").innerHTML = "Welcome back!!";
+		myTimeout = setTimeout(display, 2000);
     }else{
         
         document.getElementById("popup").style.display = "block";
