@@ -28,7 +28,7 @@ function register($Fname,$Lname,$username,$email,$password1,$password2,$target_f
     // If everything is OK -> store user data
     if ($errorText == ''){
         //store user profile iamge in profileimages folder
-        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "profileImages/". $username .".". $imageFileType);
+        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],dirname(__FILE__)."\profileImages/". $username .".". $imageFileType);
 		// Secure password string
 		$hashedPass = password_hash($password1,PASSWORD_DEFAULT);
 		fwrite($pfile, "\r\n$email,$Fname,$Lname,$username,$hashedPass"); //email is first so we can check even if accounts.db dont have any info in there
