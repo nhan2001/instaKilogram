@@ -1,23 +1,25 @@
-div {
-  font-family: Garamond, serif;
-  font-size: 18px;
-  border: 2px solid #4CAF50;
-  background-image: linear-gradient(lightgreen, green);
-  padding-top: 10px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  padding-left: 30px;
+body{
+ background-color: rgb(213, 255, 181);
 }
-button {
-  background-color: lightgreen;
-  border: groove;
-  padding: 10px 25px;
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
-  cursor: pointer;
+#nav,h1{
+	font-size: 25px;
+	color: darkblue;
+	font-weight: bold;
 }
-button:hover {
-  background-color: green;
-  color: white;
+#nav{
+	text-align: center;
+}
+a:link {
+  color: darkgreen;
+}
+a:hover {
+  color: red;
+}
+header{
+	border-style: solid;
+    border-color: green;
+	width: 37%;
+}
+main{
+	
 }
