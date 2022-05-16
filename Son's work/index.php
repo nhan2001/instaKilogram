@@ -46,7 +46,10 @@
       <div id="icon">&nbsp;</div>
       <div id="result">
 		Hello <?php echo $_SESSION['userName']; ?>! <br/>
+
 		<p><a href="logout.php"> To log out click here!</a></p>
+      <p><a href="MyAccount.php"> To access my account page click here</a></p>
+
 	  </div>	
    </div>
    <div id="uploadImages"> <!-- this is the part for upload and share image-->
@@ -105,19 +108,8 @@
          $images = glob("private/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
          $imageDescriptions = include $folderPath.'\private/imageDescriptions.txt'; //retrieve the array in the private/imageDescriptions
          foreach($images as $image) { //$images is a string
-
-            $imageExtension = pathinfo($folderPath. "/" . $image,PATHINFO_EXTENSION); 
-            if($imageExtension == "jpg"){ //if file extensions = jpg
-               $imageName = basename($folderPath.$image,".jpg");//these 4 lines is to get the basename of the file without the extension
-            }
-            else if($imageExtension == "jpeg"){
-               $imageName = basename($folderPath.$image,".jpeg"); 
-            }else if($imageExtension == "gif"){
-               $imageName = basename($folderPath.$image,".gif");
-            }else{
-               $imageName = basename($folderPath.$image,".png");
-            }
-            $imageNameWithoutNumbers = substr($imageName, strpos($imageName, "_") + 1);    
+            list($imageName) = explode('.',$image); //return a string without the file extension==>private/1_son.png  = private/1_son
+            $imageNameWithoutNumbers = substr($imageName, strpos($imageName, "_") + 1); //return a string that comes after the underscore(_);
             if($imageNameWithoutNumbers == $_SESSION['userName']){ //if name of file is equal to current username, they can view the image in this private display section
                echo '<img src="'.$image.'" /><br />';
                $tmpArray = explode("/",$image); //split the source to only get file name + extension
