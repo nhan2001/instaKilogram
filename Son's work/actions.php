@@ -53,7 +53,11 @@ function loginUser($email,$password){
             //if (password_verify($password,$tmp[4])){ //password works, comparirng with the string in the db doesnt work because of the string in the db
             	//maybe one possible fix is to change how the password is save into the file
                 $validUser= true;
+            	$_SESSION['email'] = $tmp[0];
+            	$_SESSION['Fname'] = $tmp[1];
+            	$_SESSION['Lname'] = $tmp[2];
             	$_SESSION['userName'] = $tmp[3];
+
             //}
             //break;
         }
@@ -70,7 +74,11 @@ function loginUser($email,$password){
 
 function logoutUser(){
 	unset($_SESSION['validUser']);
+	unset($_SESSION['email']);
+    unset($_SESSION['Fname']);
+	unset($_SESSION['Lname']);
 	unset($_SESSION['userName']);
+
 }
 
 function checkUser(){
