@@ -28,7 +28,7 @@ if (isset($_POST['submitBtn'])){
     <header>
         <div class="logo">
             <a href="index.php">
-                <img src="logo.png" alt="logos"></a>
+                <img src="image/logo.png" alt="logos"></a>
         </div>
         <nav class="login_signup">
             <ul>
