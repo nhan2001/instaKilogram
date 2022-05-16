@@ -2,7 +2,7 @@
 	require_once('actions.php');
 
    if(isset($_POST["Submit"])) {
-      $folder = $_POST['sharingOptions'];
+      $folder = dirname(__FILE__)."/".$_POST['sharingOptions'];
       $currentUser = $_SESSION['userName'];
       $target_file = $folder . "/" . basename($_FILES["fileToUpload"]["name"]);
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -15,15 +15,17 @@
          if( $files2 ) {
             $filecount = count($files2);
         }
-         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $folder . "/" . $filecount .".". $imageFileType);
+        $fileNameToSave = $filecount."_".$_SESSION['userName']; //ex: filecount =1, current username = son --> 1_son.jpg
+         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $folder . "/" . $fileNameToSave .".". $imageFileType);
          $descriptionFile = fopen($folder.'/'.'imageDescriptions.txt','r+');
+
          if(filesize($folder.'/imageDescriptions.txt') == 0){  // if text file is empty
-            $emptyArray[$filecount.".".$imageFileType] = $_POST['description'];
+            $emptyArray[$fileNameToSave.".".$imageFileType] = $_POST['description'];
             file_put_contents($folder.'/imageDescriptions.txt',  '<?php return ' . var_export($emptyArray, true) . ';');
          }else{ //if text file is not empty
             $nonEmptyArray = include $folder . '/imageDescriptions.txt'; //retrieve the array in the text file
             //echo $nonEmptyArray['2.png']; //this line is to retrieve the value of the key to view the description
-            $nonEmptyArray[$filecount.".".$imageFileType] = $_POST['description']; //add another key value pair into the retrieved array
+            $nonEmptyArray[$fileNameToSave.".".$imageFileType] = $_POST['description']; //add another key value pair into the retrieved array
             file_put_contents($folder.'/imageDescriptions.txt',  '<?php return ' . var_export($nonEmptyArray, true) . ';'); 
             //above line put the retrieved array after adding another key value pair into it back to the text file 
          }
@@ -65,12 +67,13 @@
    <div id = "publicDisplay"> 
       <p>This is for public display</P>
       <?php
+         $folderPath = dirname(__FILE__); //public folder path
          $images = glob("public/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $publicDescriptions = include 'public/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
+         $imageDescriptions = include $folderPath.'\public/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
          foreach($images as $image) {
             echo '<img src="'.$image.'" /><br />';
             $tmpArray = explode("/",$image); //split the source to only get file name + extension
-            echo $publicDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+            echo $imageDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
             ?>
             <br><br> <!-- skip 2 line -->
       <?php
@@ -81,12 +84,13 @@
    <div id = "internalDisplay"> 
       <p>This is for internal display</P>
       <?php 
-         $images = glob("internal/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $publicDescriptions = include 'internal/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
+         $folderPath = dirname(__FILE__).'\internal';
+         $images = glob($folderPath."/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
+         $imageDescriptions = include $folderPath.'/imageDescriptions.txt'; //retrieve the array in the internal/imageDescriptions
          foreach($images as $image) {
             echo '<img src="'.$image.'" /><br />';
             $tmpArray = explode("/",$image); //split the source to only get file name + extension
-            echo $publicDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+            echo $imageDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
             ?>
             <br><br> <!-- skip 2 line -->
       <?php
@@ -97,12 +101,28 @@
    <div id = "privateDisplay">
       <p>This is for private display</P>
       <?php
+         $folderPath = dirname(__FILE__);
          $images = glob("private/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $publicDescriptions = include 'private/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
-         foreach($images as $image) {
-            echo '<img src="'.$image.'" /><br />';
-            $tmpArray = explode("/",$image); //split the source to only get file name + extension
-            echo $publicDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+         $imageDescriptions = include $folderPath.'\private/imageDescriptions.txt'; //retrieve the array in the private/imageDescriptions
+         foreach($images as $image) { //$images is a string
+
+            $imageExtension = pathinfo($folderPath. "/" . $image,PATHINFO_EXTENSION); 
+            if($imageExtension == "jpg"){ //if file extensions = jpg
+               $imageName = basename($folderPath.$image,".jpg");//these 4 lines is to get the basename of the file without the extension
+            }
+            else if($imageExtension == "jpeg"){
+               $imageName = basename($folderPath.$image,".jpeg"); 
+            }else if($imageExtension == "gif"){
+               $imageName = basename($folderPath.$image,".gif");
+            }else{
+               $imageName = basename($folderPath.$image,".png");
+            }
+            $imageNameWithoutNumbers = substr($imageName, strpos($imageName, "_") + 1);    
+            if($imageNameWithoutNumbers == $_SESSION['userName']){ //if name of file is equal to current username, they can view the image in this private display section
+               echo '<img src="'.$image.'" /><br />';
+               $tmpArray = explode("/",$image); //split the source to only get file name + extension
+               echo $imageDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+            }
             ?>
             <br><br> <!-- skip 2 line -->
       <?php
