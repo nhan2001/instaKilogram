@@ -1,7 +1,4 @@
 
-// put default value for a cookie whenever it is created
-var cookieKey= "Accepted";
-var cookieValue="true";
 document.cookie = "abc=false"; // for testing purpose
 function display() {
   document.getElementById("popup").style.display = "none"
