@@ -11,7 +11,7 @@ body {
     font-size: 17px;
     justify-content: center;
     align-items: center;
-    background-image: url('Instakilogram.png');
+    background-image: url('image/Instakilogram.png');
     background-size: contain;
     background: position y -80px;
 }
