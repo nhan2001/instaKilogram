@@ -66,11 +66,11 @@
       <p>This is for public display</P>
       <?php
          $images = glob("public/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $publicDescriptions = include 'public/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
+         $imageDescriptions = include __DIR__.'\public/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
          foreach($images as $image) {
             echo '<img src="'.$image.'" /><br />';
             $tmpArray = explode("/",$image); //split the source to only get file name + extension
-            echo $publicDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+            echo $imageDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
             ?>
             <br><br> <!-- skip 2 line -->
       <?php
@@ -82,11 +82,11 @@
       <p>This is for internal display</P>
       <?php 
          $images = glob("internal/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $publicDescriptions = include 'internal/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
+         $imageDescriptions = include __DIR__.'\internal/imageDescriptions.txt'; //retrieve the array in the internal/imageDescriptions
          foreach($images as $image) {
             echo '<img src="'.$image.'" /><br />';
             $tmpArray = explode("/",$image); //split the source to only get file name + extension
-            echo $publicDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+            echo $imageDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
             ?>
             <br><br> <!-- skip 2 line -->
       <?php
@@ -98,11 +98,13 @@
       <p>This is for private display</P>
       <?php
          $images = glob("private/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $publicDescriptions = include 'private/imageDescriptions.txt'; //retrieve the array in the public/imageDescriptions
-         foreach($images as $image) {
+         $imageDescriptions = include __DIR__.'\private/imageDescriptions.txt'; //retrieve the array in the private/imageDescriptions
+         foreach($images as $image) { //$images is a string
+            $imageName = pathinfo();
+            
             echo '<img src="'.$image.'" /><br />';
             $tmpArray = explode("/",$image); //split the source to only get file name + extension
-            echo $publicDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
+            echo $imageDescriptions[$tmpArray[1]];//search in imageDescriptions array to find the value of key with same file name
             ?>
             <br><br> <!-- skip 2 line -->
       <?php
