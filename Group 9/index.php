@@ -87,9 +87,9 @@
    <div id = "internalDisplay"> 
       <p>This is for internal display</P>
       <?php 
-         $folderPath = dirname(__FILE__).'\internal';
-         $images = glob($folderPath."/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
-         $imageDescriptions = include $folderPath.'/imageDescriptions.txt'; //retrieve the array in the internal/imageDescriptions
+         $folderPath = dirname(__FILE__);
+         $images = glob("internal/"."*.{jpeg,jpg,gif,png}",GLOB_BRACE);
+         $imageDescriptions = include $folderPath.'\private/imageDescriptions.txt'; //retrieve the array in the internal/imageDescriptions
          foreach($images as $image) {
             echo '<img src="'.$image.'" /><br />';
             $tmpArray = explode("/",$image); //split the source to only get file name + extension
@@ -122,6 +122,4 @@
         
       ?>
    </div>
-   <footer><div> <a href="About.html">About</a> <a href="Help.html">Help</a>  <a href="Policy.html">Policy</a>  <a href="Copyright.html">Copyright</a></div>
-</footer>
 </body>
