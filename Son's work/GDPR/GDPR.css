@@ -1,0 +1,25 @@
+div {
+  font-family: Garamond, serif;
+  font-size: 18.5px;
+  border: 2px solid;
+  border-radius: 12px;
+  background-image: linear-gradient(rgb(240, 240, 240), white);
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  width: 46%;
+}
+button {
+  background-color: lightgreen;
+  border: groove;
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: green;
+  color: white;
+}

@@ -1,6 +1,6 @@
 <?php
 require_once('actions.php');
-
+require_once('GDPR.php') ;
 $error = '0';
 
 if (isset($_POST['submitBtn'])){
