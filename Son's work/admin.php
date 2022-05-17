@@ -156,10 +156,16 @@
                                 //if email of First name or Last name conntains search value
                                 if (str_contains(strtolower($gmailName), $searchValue) || str_contains(strtolower($tmp[1]), $searchValue)|| str_contains(strtolower($tmp[2]), $searchValue)){
                                     if(!empty($searchValue)){ //if input is  not empty
-                                        echo "<tr><td>"."<a href='#'>Open Modal</a>"
+                                        echo "<tr><td>"."<form method = 'post'>
+                                        <input type='submit' name='submitBtn' id = 'submit' value='Register'>
+                                        </form>"
                                         . "</td><td>" . $tmp[3] . 
                                         "</td><td>". $tmp[0] . "</td><td>" . $tmp[1] . "</td><td>"
                                         . $tmp[2]. "</td></tr>";
+                                        
+                                        if(isset($_POST['submitBtn'])) {
+                                            echo "check 1";
+                                        }
                                     }                            
                                 }
                             }
@@ -190,11 +196,17 @@
                         $tmp = explode(',', $line);
 
                         if(str_contains($tmp[0],"gmail.com" )){ //not an empty line
-                                    echo "<tr><td>" ."<a href='editProfile.php'>View User Information</a>". "</td><td>" . $tmp[3] . 
-                                    "</td><td>". $tmp[0] . "</td><td>" . $tmp[1] . "</td><td>"
-                                    . $tmp[2]. "</td></tr>";                          
-                            }
+                            echo "<tr><td>";
+                            ?>
+                            <a href = "editProfile.php?userEmail=<?php echo $tmp[0] ?>&
+                            userFname=<?php echo $tmp[1] ?>&userLname=<?php echo $tmp[2] ?>&
+                            userName=<?php echo $tmp[3] ?>">View User Profile</a>
+                            <?php                           
+                            echo"</td><td>" . $tmp[3] . 
+                            "</td><td>". $tmp[0] . "</td><td>" . $tmp[1] . "</td><td>"
+                            . $tmp[2]. "</td></tr>";    
                         }
+                    }
                     echo "</table>";
                     fclose($pfile);
                 ?>
