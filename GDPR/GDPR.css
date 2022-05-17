@@ -3,7 +3,7 @@ div {
   font-size: 18.5px;
   border: 2px solid;
   border-radius: 12px;
-  background-image: linear-gradient(lightgreen, green);
+  background-image: linear-gradient(rgb(240, 240, 240), white);
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 10px;
