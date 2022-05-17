@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>Page Title</title>
+        <link rel="stylesheet" href="guest.css">
     </head>
 <body>
     <header>
@@ -13,14 +14,15 @@
         </div>
         <nav class="login_signup">
             <ul>
-                <li id="login">
-                    <a href="login.php">
-                        Log in
-                    </a>
-                </li>
+              
                 <li id="signup">
                     <a href="signup.php">
                         Sign up
+                    </a>
+                </li>
+                <li id="login">
+                    <a href="guest.php">
+                        Log in
                     </a>
                 </li>
             </ul>

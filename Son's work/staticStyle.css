@@ -1,32 +1,43 @@
-body{
- background-color: rgb(230, 230, 230));
+body {
+    background-color: rgb(230, 230, 230);
 }
-#nav,h1{
-	font-size: 25px;
-	color: darkblue;
-	font-weight: bold;
+
+#nav,
+h1 {
+    font-size: 25px;
+    color: darkblue;
+    font-weight: bold;
 }
-#nav{
-	text-align: center;
+
+#nav {
+    text-align: center;
 }
+
 a:link {
-  color: darkgreen;
+    color: darkgreen;
 }
+
 a:hover {
-  color: red;
+    color: red;
 }
-header{
-	border-style: solid;
+
+header {
+    border-style: solid;
     border-color: green;
-	width: 37%;
+    width: 37%;
 }
-main{
-	
+
+main {}
+
+h2,
+h3 {
+    color: darkred;
 }
-h2,h3{
-	color: darkred;
-}
-p.content,ul,div.info,article{
-	font-family: Apple Chancery, cursive;
-	font-size: 16px;
+
+p.content,
+ul,
+div.info,
+article {
+    font-family: Apple Chancery, cursive;
+    font-size: 16px;
 }

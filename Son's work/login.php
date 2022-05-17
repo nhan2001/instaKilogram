@@ -20,15 +20,15 @@ if (isset($_POST['submitBtn'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 
 <body>
     
-    <header>
+        <header>
         <div class="logo">
             <a href="index.php">
-                <img src="image/logo.png" alt="logos"></a>
+                <img src="images/logo.png" alt="logos"></a>
         </div>
         <nav class="login_signup">
             <ul>

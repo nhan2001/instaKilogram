@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    background-image: url('image/Instakilogram.png');
+    background-size: contain;
+    background: position y -80px;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+}
+
+.logo img {
+    width: 150px;
+    height: 70px;
+    line-height: 60px;
+    float: left;
+}
+
+.login_signup ul {
+    display: flex;
+    list-style: none;
+    float: right;
+}
+
+.login_signup ul li {
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 0;
+    line-height: 60px;
+}
+
+.login_signup ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#login a {
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px;
+}
+
+#signup a {
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px;
+    background-color: #fff;
+}
+
+#login a {
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px;
+    background-color: #fff;
+}
+
+#publicDisplay {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}

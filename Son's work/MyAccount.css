@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    background-image: url('image/Instakilogram.png');
+    background-size: contain;
+    background: position y -80px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18%;
+    border-bottom: 1px solid rgba(219, 219, 219, 1);
+    background-color: white;
+}
+
+header .logo {
+    height: 29px;
+}
+
+header .logo img {
+    height: 100%;
+    object-fit: contain;
+}
+
+header .search-box {
+    width: 250px;
+    background-color: rgba(239, 239, 239, 1);
+    padding: 3px 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+header .search-box input {
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: rgba(239, 239, 239, 1);
+    padding-left: 10px;
+    font-size: 15px;
+    color: #8e8e8e;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header nav ul li img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header nav ul li a i {
+    font-size: 22px;
+    color: rgba(38, 38, 38, 1)
+}
+
+#signup a {
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px;
+    background-color: #fff;
+    text-decoration: none;
+}
