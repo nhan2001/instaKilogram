@@ -1,6 +1,0 @@
-
-W3schools.com. 2018.JavaScript Cookies. [online] Available at: <https://www.w3schools.com/js/js_cookies.asp> [Accessed 12 May 2022]
-
-Musescore.com. 2021. Musescore Privacy Policy | Musescore.com. [online] Available at: <https://musescore.com/legal/privacy> [Accessed 15 May 2022].
-
-Musescore.com. 2021. DMCA Copyright Policy | Musescore.com. [online] Available at: <https://musescore.com/legal/dmca> [Accessed 17 May 2022]
