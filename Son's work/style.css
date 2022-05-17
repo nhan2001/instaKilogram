@@ -114,7 +114,6 @@ label {
     top: 50%;
     pointer-events: none;
     transform: translateY(-50%);
-    background: black;
     transition: all 0.3s ease-in-out;
 }
 
@@ -127,7 +126,6 @@ label {
     top: 0px;
     font-size: 13px;
     font-weight: 500;
-    color: black;
 }
 
 input#btn-login {
