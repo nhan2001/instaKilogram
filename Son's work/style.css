@@ -13,7 +13,6 @@ body {
     align-items: center;
     background-image: url('image/Instakilogram.png');
     background-size: contain;
-    background: position y -80px;
 }
 
 header {
@@ -115,7 +114,7 @@ label {
     top: 50%;
     pointer-events: none;
     transform: translateY(-50%);
-    background: black transparent;
+    background: black;
     transition: all 0.3s ease-in-out;
 }
 
@@ -128,7 +127,7 @@ label {
     top: 0px;
     font-size: 13px;
     font-weight: 500;
-    color: black transparent;
+    color: black;
 }
 
 input#btn-login {
