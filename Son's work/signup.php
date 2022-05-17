@@ -116,5 +116,7 @@ if(isset($_POST['submitBtn'])) {
 <?php            
     }
 ?>
+<footer><div> <a href="About.html">About</a> <a href="Help.html">Help</a>  <a href="Policy.html">Policy</a>  <a href="Copyright.html">Copyright</a></div>
+</footer>
 </body>
 </html>
