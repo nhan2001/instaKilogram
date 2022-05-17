@@ -5,21 +5,29 @@
 <html>
     <head>
         <title>My Account Page</title>
+        <link rel="stylesheet" href="MyAccount.css">
     </head>
 <body>
-    <header>
+   <header>
         <div class="logo">
-            <a href="index.php">
-                <img src="image/logo.png" alt="logos"></a>
+            <img src="images\logo.png" alt="">
         </div>
-        <nav class="login_signup">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="search" placeholder="Search...">
+        </div>
+        <nav>
             <ul>
-                <li id="login">
-                    <a href="index.php">
-                        Indedx
+                <li>
+                    <a href="index.php"> <i class="fa-solid fa-house"></i></i>
                     </a>
                 </li>
-                <li id="signup">
+                <li>
+                    <a href="#"> <i class="fa-regular fa-square-plus"></i>
+                    </a>
+                </li>
+
+                 <li id="signup">
                     <a href="logout.php">
                         Log out
                     </a>

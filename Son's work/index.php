@@ -38,7 +38,7 @@
 <html lang="en">
 <head>
    <title>User's personal Page after logged in</title>
-   <link href="style/style.css" rel="stylesheet" type="text/css" />
+   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
    <div id="main">
