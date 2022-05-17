@@ -9,12 +9,7 @@ if(isset($_POST['submitBtn'])) {
     $password1 =isset($_POST['password1']) ? $_POST['password1'] : '';
     $password2 =isset($_POST['password2']) ? $_POST['password2'] : '';
 
-    // $Fname = $_POST['firstName'];
-    // $Lname = $_POST['lastName'];
-    // $username = $_POST['userName'];
-    // $email = $_POST['emailAddress'];
-    // $password1 =$_POST['password1'];
-    // $password2 =$_POST['password2'];
+    
 
     $target_file = "profileImages/" . basename($_FILES["fileToUpload"]["name"]);
 	echo($target_file);
