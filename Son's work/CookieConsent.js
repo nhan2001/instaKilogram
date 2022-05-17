@@ -37,7 +37,7 @@ let getCookie= function(){
 let isSetCookie= function(){
     let value=getCookie();
     if(value!=""){
-        document.getElementById("popup").innerHTML = "Welcome back!!";
+        document.getElementById("popup").innerHTML = "Welcome to Instakilogram!!";
 		myTimeout = setTimeout(display, 2000);
     }else{
         
