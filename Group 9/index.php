@@ -38,7 +38,7 @@
 <html lang="en">
 <head>
    <title>User's personal Page after logged in</title>
-   <link href="style.css" rel="stylesheet" type="text/css" />
+   <link href="style/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
    <div id="main">
@@ -122,4 +122,6 @@
         
       ?>
    </div>
+   <footer><div> <a href="About.html">About</a> <a href="Help.html">Help</a>  <a href="Policy.html">Policy</a>  <a href="Copyright.html">Copyright</a></div>
+</footer>
 </body>

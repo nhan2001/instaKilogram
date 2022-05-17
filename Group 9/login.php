@@ -20,15 +20,16 @@ if (isset($_POST['submitBtn'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     
-        <header>
+    <header>
+	
         <div class="logo">
             <a href="index.php">
-                <img src="images/logo.png" alt="logos"></a>
+                <img src="image/logo.png" alt="logos"></a>
         </div>
         <nav class="login_signup">
             <ul>
@@ -82,5 +83,7 @@ if (isset($_POST['submitBtn'])){
 <?php            
     }
 ?>
+<footer><div> <a href="About.html">About</a> <a href="Help.html">Help</a>  <a href="Policy.html">Policy</a>  <a href="Copyright.html">Copyright</a></div>
+</footer>
 </body>
 </html>
